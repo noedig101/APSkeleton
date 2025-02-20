@@ -22,6 +22,7 @@ After that, youre good! You can start replacing all my unfunny comments with act
 If you have multiple drives like a C and D drive that you can go to that drive just by putting the name of the drive followed by a colon into the terminal. It really is just that simple. When you want to move around then you use cd. As an example, if I wanted to go to my D drive and then go to a folder I created called workspace it would look this this.
 
 `>D:`
+
 `>cd workspace`
 
 If you capitalized workspace then it needs to be capitalized when you cd into it as well. You can also use the TAB key to autocomplete file names. So instead of typing the entire word workspace you could just type `wor` and then hit tab and it will fix it for you. If you had more folder or file names that have that same `wor` starting condition then just keep hitting tab until you find it.
@@ -33,14 +34,24 @@ A lot of people have workspace folders. Its nice to just hold all youre projects
 Below Ill list a bunch of git commands and Ill have a description of what its doing next to it. I am not a prolific github user so this is nowhere near all of them. If you have other questions about what they do or why its not working, then again, asking is a great option.
 
 `git clone the-name-of-your-repository` - This is how youll initially get your repository. You can get the text you put after the word clone by clicking the green Code button thats on YOUR repository and then copying the text under HTTPS. There are other options but I wont go into them here but feel free to explore and learn!
+
 `git status` - I spam this one all the time tbh. It tells you what branch youre on, what files have been changed and what files are ready for committing. Honestly sometimes Ill just type it twice in a row and honestly I dont know why
+
 `git pull` - This gets all the changes that were made to the branch (explained below) and puts them on your computer. Important for if you are working with others!
+
 `git add file-name` - This readies a changed file to be committed (explained below). If the file name is red when you type git status then its not readied and if its green then it is
+
 `git commit -m "Some text about what you did"` - This is the committing. Basically you bundle up all the changes and get them ready to send to github all at once. Its generally good to add some descriptive text but I get it....sometimes you just keyboard smash and thats ok. Its also generally nice to do regular commits. For example, committing after you finish the Items file or fix up a specific bug
+
 `git push` - This takes your commits and sends them to github. If its your first time pushing up that specific branch then itll error out and tell you to do a set-upstream thingy. Just copy whatever if tells you to and use that.
+
 `git checkout name-of-branch` - Switches to the branch that you name. If you created a branch on github or someone youre working with did then youll need to do a git pull first.
+
 `git checkout -b name-of-new-branch` - This creates a new branch on your computer locally. Nice to quickly swap to a new branch without needing to create it on github, do a pull, then switch to it. If you do this and then do your git push youll get that set-upstream thingy.
+
 `git branch` - Lists all the branches you have locally on your computer. Nice if you want to switch to a branch and youve forgotten the name/dont wanna type it and just wanna copy it.
+
+
 
 `git merge name-of-other-branch` - This ones more complicated (its why I gave it extra space). Its main use is for bringing in changes from another branch into yours. For example, lets say you branched off your main branch and called it my-first-branch. After working on a few things you decide to leave it alone for a while and work on something else. You branch off of main again and this time call it my-second-branch. You are able to finish up your second branch and you successfully merge it into main. When you go back to working on my-first-branch then youll want to run git merge main so that all those changes that you finished in your second branch get moved over to this branch as well.
 
