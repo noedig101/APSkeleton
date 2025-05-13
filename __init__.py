@@ -2,6 +2,7 @@
 # What I have here is just some of the basic Archipelago classes that are widely used
 
 # A more indepth explanation of the types of imports
+# THE LINES FROM 7-12 ARE EXAMPLE IMPORTS AND NOT NECESSARILY REQUIRED
 
 # import random
 # With that import you are importing every single function, class, variable, whatever else that is allowed to be imported from random. Super useful and simple but somewhat bulky
@@ -52,17 +53,18 @@ class APSkeletonWorld(World):
     web = APSkeletonWeb()
 
     # There are other built in variables for AP. You can look at other worlds to see your options
+    # Like PLEASE look at the various worlds. Its so helpful. Find one you like and you can duplicate a bunch of it
 
     # This is where you put stuff that need to be done RIGHT away. Typically you can just leave it alone but it can be useful to pop some things here as needed
     def __init__(self, multiworld: "MultiWorld", player: int):
         super().__init__(multiworld, player)
 
-    # Generate early does what you think. Its what you need to do just before the generation
+    # Generate early you do things just before the generation
     # Super important for doing things like adjusting the item pool based on options and the like
     # Can technically be skipped if you dont need to do anything or if you handle it elsewhere like a short hike
     def generate_early(self):
         # I highly recommend looking at other apworlds init files to see some examples
-        # sly1 (hey i did that), ahit, and rogue legacy are some good ones
+        # sly1 (hey i did that), ahit, and bomb rush cyberfunk are some good ones
         starting_place = self.options.StartingPlace
 
         # Push precollected is how you give your player items they need to start with
@@ -87,7 +89,7 @@ class APSkeletonWorld(World):
         self.multiworld.itempool += create_itempool(self)
 
     # This is just a helper function for turning names into Items. You could do some other stuff here as well
-    # ahit does similar if you want another look and rogue legacy does it in a slightly different way by turning it into a specific RLItem
+    # ahit does similar if you want another look and bomb rush cyberfunk does it in a slightly different way by turning it into a specific item for that game
     # Again hopefully I do a better job of explaining the Items.py file
     def create_item(self, name: str) -> Item:
         return create_item(self, name)
