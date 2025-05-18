@@ -13,7 +13,7 @@ If you are worried about messaging in a large group chat then message me directl
 
 Well theres a bunch of ways! To start though, you gotta first make a github account and fork the [Archipelago](https://github.com/ArchipelagoMW/Archipelago) project. Its above the big green Code button, sandwiched between the Watch and Star buttons. Name the repository whatever you want and make sure you make yourself the owner (Github is also really weird and you can only fork a project once on your account. There are work arounds though if you need). Now you want to open up your command terminal and navigate to where you want to place your project. Ill leave some helpful ways of using terminal at the bottom of this. Clone your repository (it will go into its own folder based on the name of the repository) and open it up in whatever you use to program! I recommend [Visual Studio Code](https://code.visualstudio.com/). If you hate AI like me, then dont worry you have to enable it in an extension.
 
-Now that you have your cloned Archipelago project, go to the worlds folder and create a new folder for your game. Now you could manually create all the files and write everything yourself or just copy these files and drop them in. If it the file names are green that means they were newly added. Once you have the files in I would push your files up and make sure that its working and that you are able to commit everything. Again, Ill add some more specific details about what that means and how to do it at the bottom if you need it.
+Now that you have your cloned Archipelago project, go to the worlds folder and create a new folder for your game. Now you could manually create all the files and write everything yourself or just copy these files and drop them in. If the file names are green that means they were newly added. Once you have the files in, I would push them up and make sure that its working and that you are able to commit everything. Again, Ill add some more specific details about what that means and how to do it at the bottom if you need it.
 
 After that, youre good! You can start replacing all my unfunny comments with actually important stuff. Dont worry about "good" code or what it looks like. If it works, then its 10/10 no notes. Also dont be scared of errors! Run the generation as many times as you want. Errors are great cause they tell you what you need to fix or what to do next. They are great at guiding you. If you need help reading errors, then theres tons of people that can help you!
 
@@ -29,7 +29,7 @@ If you capitalized workspace then it needs to be capitalized when you cd into it
 
 A lot of people have workspace folders. Its nice to just hold all youre projects in one location. And Im sure youll definitely fall in love with programming from this and go on to become the best dev ever right?
 
-# GitHub commands
+# Git commands
 
 Below Ill list a bunch of git commands and Ill have a description of what its doing next to it. I am not a prolific github user so this is nowhere near all of them. If you have other questions about what they do or why its not working, then again, asking is a great option.
 

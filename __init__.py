@@ -13,6 +13,10 @@
 
 from BaseClasses import MultiWorld, Item, ItemClassification, Tutorial
 from worlds.AutoWorld import World, CollectionState, WebWorld
+from typing import Dict
+
+from .Locations import get_location_names, get_total_locations
+from .Items import create_item, create_itempool, item_table
 
 # This is where you setup the page on the site!
 # Typically is the name of your game with web
