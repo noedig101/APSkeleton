@@ -9,6 +9,7 @@ if TYPE_CHECKING:
 # This is where you will create your imaginary game world
 # IE: connect rooms and areas together
 # This is NOT where you'll add requirements for how to get to certain locations thats in Rules.py
+# This is also long and tediouos
 def create_regions(world: "APSkeletonWorld"):
     # The functions that are being used here will be located at the bottom to view
     # The important part is that if its not a dead end and connects to another place then name it

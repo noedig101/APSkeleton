@@ -18,6 +18,7 @@ from typing import Dict
 from .Locations import get_location_names, get_total_locations
 from .Items import create_item, create_itempool, item_table
 from .Options import APSkeletonOptions
+from .Regions import create_regions
 
 # This is where you setup the page on the site!
 # Typically is the name of your game with web
