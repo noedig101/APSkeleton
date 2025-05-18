@@ -2,6 +2,8 @@
 from typing import Dict, TYPE_CHECKING
 import logging
 
+from .Types import LocData
+
 if TYPE_CHECKING:
     from . import APSkeletonWorld
 

@@ -13,7 +13,8 @@ from BaseClasses import Item, ItemClassification
 
 # These come from the other files in this example. If you want to see the source ctrl + click the name
 # You can also do that ctrl + click for any functions to see what they do
-from .Types import ItemData
+from .Types import ItemData, ChapterType, APSkeletonItem
+from .Locations import get_total_locations
 from typing import List, Dict, TYPE_CHECKING
 
 # This is just making sure nothing gets confused dw about what its doing exactly
@@ -154,6 +155,8 @@ junk_weights = {
     "Coughing Baby": 20
 }
 
+# This makes a really convenient list of all the other dictionaries
+# (fun fact: {} is a dictionary)
 item_table = {
     **ap_skeleton_items,
     **ap_skeleton_chapters,
