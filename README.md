@@ -12,7 +12,7 @@ If you are worried about messaging in a large group chat then message me directl
 # How do you make use of this?
 
 Well theres a bunch of ways! To start though, you gotta first make a github account and fork the [Archipelago](https://github.com/ArchipelagoMW/Archipelago) project. Its above the big green Code button, sandwiched between the Watch and Star buttons.
-![Image](https://github.com/user-attachments/assets/5919c2ec-a25b-4db6-b33e-a0f6c2932683)
+![Image](https://github.com/user-attachments/assets/4a56598b-d467-4a5a-9743-efbb1ca45a41)
 
 Name the repository whatever you want and make sure you make yourself the owner (Github is also really weird and you can only fork a project once on your account. There are work arounds though if you need). Now you want to open up your command terminal and navigate to where you want to place your project. Ill leave some helpful ways of using terminal at the bottom of this. Clone your repository (it will go into its own folder based on the name of the repository) and open it up in whatever you use to program! I recommend [Visual Studio Code](https://code.visualstudio.com/). If you hate AI like me, then dont worry you have to enable it in an extension.
 
