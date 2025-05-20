@@ -37,6 +37,7 @@ A lot of people have workspace folders. Its nice to just hold all youre projects
 Below Ill list a bunch of git commands and Ill have a description of what its doing next to it. I am not a prolific github user so this is nowhere near all of them. If you have other questions about what they do or why its not working, then again, asking is a great option.
 
 `git clone the-name-of-your-repository` - This is how youll download your repository. Downloading it this way doubles up as letting you then perform the git push that are explained later. You can get the text you put after the word clone by clicking the green Code button thats on YOUR repository and then copying the text under HTTPS. There are other options but I wont go into them here but feel free to explore and learn!
+
 ![image](https://github.com/user-attachments/assets/5884471a-dcf9-4d1e-9ffb-a596ce767fa7)
 
 `git status` - This guy tells you what branch youre on, what files have been changed, and what files are ready for committing. I spam this one all the time tbh. Honestly sometimes Ill just type it twice in a row and honestly I dont know why.
