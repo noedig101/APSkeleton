@@ -3,10 +3,10 @@
 This is meant to help people make AP worlds even if they have 0 experience programming. I tried my best to give a ton of explanation but I know its not perfect.
 All of the explanations are kinda just me yapping so they could be unhelpful or super helpful, it all depends on the background of the person reading! I included a lot of explanations on basically every step including getting your fork and what the hell a github is.
 
-The most important thing though is that you take this slow. Youre doing an AWESOME job just by downloading this to see if it helps you. And if it doesnt, thats fine!
+The most important thing though is that you take this slow. Youre doing an AWESOME job just by reading this to see if it helps you. And if it doesnt, thats fine!
 Theres no pressure to get anything out in any time period.
 
-The other most important thing is that this is only one of the resources you have available to you. Theres tons of AWESOME people in the archipelago discord that are primed to answer any question you have. Theres no bad questions whether this is the first time you have opened code or if you have been programming for years.
+The other most important thing is that this is only one of the resources you have available to you. Theres tons of AWESOME people in the archipelago discord that are primed to answer any question you have. There's no bad questions! Whether it's the first time you've opened code, or if you've been programming for years, don't be afraid to ask for help. I know how hard it can feel to ask for help but trust me, people are more excited to help then anything else.
 If you are worried about messaging in a large group chat then message me directly! My name is Nep (I have the profile pic of a cute rat). Im also super shy and awkward so Id love love love to help others that also feel that way.
 
 # How do you make use of this?
@@ -16,13 +16,13 @@ Well theres a bunch of ways! To start though, you gotta first make a github acco
 
 Name the repository whatever you want and make sure you make yourself the owner (Github is also really weird and you can only fork a project once on your account. There are work arounds though if you need). Now you want to open up your command terminal and navigate to where you want to place your project. Ill leave some helpful ways of using terminal at the bottom of this. Clone your repository (it will go into its own folder based on the name of the repository) and open it up in whatever you use to program! I recommend [Visual Studio Code](https://code.visualstudio.com/). If you hate AI like me, then dont worry you have to enable it in an extension.
 
-Now that you have your cloned Archipelago project, go to the worlds folder and create a new folder for your game. Now you could manually create all the files and write everything yourself or just copy these files and drop them in. If the file names are green that means they were newly added. Once you have the files in, I would push them up and make sure that its working and that you are able to commit everything. Again, Ill add some more specific details about what that means and how to do it at the bottom if you need it.
+Now that you have your cloned Archipelago project, go to the worlds folder and create a new folder for your game. Now you can manually create all the files and write everything yourself or just copy these files and drop them in. If the file names are green that means they were newly added. Once you have the files in, I would push them up and make sure that its working and that you are able to commit everything. Again, Ill add some more specific details about what that means and how to do it at the bottom if you need it.
 
 After that, youre good! You can start replacing all my unfunny comments with actually important stuff. Dont worry about "good" code or what it looks like. If it works, then its 10/10 no notes. Also dont be scared of errors! Run the generation as many times as you want. Errors are great cause they tell you what you need to fix or what to do next. They are great at guiding you. If you need help reading errors, then theres tons of people that can help you!
 
 # Command Line/Terminal/Whatever
 
-If you have multiple drives like a C and D drive that you can go to that drive just by putting the name of the drive followed by a colon into the terminal. It really is just that simple. When you want to move around then you use cd. As an example, if I wanted to go to my D drive and then go to a folder I created called workspace it would look this this.
+If you have multiple drives like a C and D drive then you can go to that drive just by putting the name of the drive followed by a colon into the terminal. It really is just that simple. When you want to move around then you use `cd`. As an example, if I wanted to go to my D drive and then go to a folder I created called workspace it would look this this.
 
 `>D:`
 
@@ -36,9 +36,10 @@ A lot of people have workspace folders. Its nice to just hold all youre projects
 
 Below Ill list a bunch of git commands and Ill have a description of what its doing next to it. I am not a prolific github user so this is nowhere near all of them. If you have other questions about what they do or why its not working, then again, asking is a great option.
 
-`git clone the-name-of-your-repository` - This is how youll initially get your repository. You can get the text you put after the word clone by clicking the green Code button thats on YOUR repository and then copying the text under HTTPS. There are other options but I wont go into them here but feel free to explore and learn!
+`git clone the-name-of-your-repository` - This is how youll download your repository. Downloading it this way doubles up as letting you then perform the git push that are explained later. You can get the text you put after the word clone by clicking the green Code button thats on YOUR repository and then copying the text under HTTPS. There are other options but I wont go into them here but feel free to explore and learn!
+![image](https://github.com/user-attachments/assets/5884471a-dcf9-4d1e-9ffb-a596ce767fa7)
 
-`git status` - I spam this one all the time tbh. It tells you what branch youre on, what files have been changed and what files are ready for committing. Honestly sometimes Ill just type it twice in a row and honestly I dont know why
+`git status` - This guy tells you what branch youre on, what files have been changed, and what files are ready for committing. I spam this one all the time tbh. Honestly sometimes Ill just type it twice in a row and honestly I dont know why.
 
 `git pull` - This gets all the changes that were made to the branch (explained below) and puts them on your computer. Important for if you are working with others!
 
@@ -54,9 +55,7 @@ Below Ill list a bunch of git commands and Ill have a description of what its do
 
 `git branch` - Lists all the branches you have locally on your computer. Nice if you want to switch to a branch and youve forgotten the name/dont wanna type it and just wanna copy it.
 
-
-
-`git merge name-of-other-branch` - This ones more complicated (its why I gave it extra space). Its main use is for bringing in changes from another branch into yours. For example, lets say you branched off your main branch and called it my-first-branch. After working on a few things you decide to leave it alone for a while and work on something else. You branch off of main again and this time call it my-second-branch. You are able to finish up your second branch and you successfully merge it into main. When you go back to working on my-first-branch then youll want to run git merge main so that all those changes that you finished in your second branch get moved over to this branch as well.
+`git merge name-of-other-branch` - This ones more complicated (its why I gave it extra space). Its main use is for bringing in changes from another branch into yours. For example, lets say you branched off your main branch and called it my-first-branch. After working on a few things you decide to leave it alone for a while and work on something else. You branch off of main again and this time call it my-second-branch. You are able to finish up your second branch and you successfully merge (merging will be extra explained just below so dont worry if you dont get it yet) it into main. When you go back to working on my-first-branch then youll want to run git merge main so that all those changes that you finished in your second branch get moved over to this branch as well.
 
 # Other GitHub stuff
 
@@ -72,4 +71,4 @@ If youre working alone then branches are still super useful! They help you organ
 
 ## Ok Im using branches but what the heck is merging?
 
-Merging is just combining the branches into one. The simplest way is after you do your final git push, if you go to the github website on your repo and refresh, you should see a new button that says compare & merge. Go ahead and click that and youll see how youre new branch compares to the one youre merging into. If youre good with those changes then click merge. If youre working with someone else, then you can use this to show them what changes youre making and they can double check your work.
+Merging is just combining the branches into one. The simplest way is after you do your final git push, if you go to the github website on your repo and refresh, you should see a new button that says compare & merge. Go ahead and click that and youll see how youre new branch compares to the one youre merging into. If youre good with those changes then click merge. If youre working with someone else, then you can use this to show them what changes youre making and they can double check your work. There can be a bunch of complications with merging (if you keep programming you will eventually encounter the horrors that some merge conflicts can bring) so if you are still struggling with understanding feel free to reach out!
