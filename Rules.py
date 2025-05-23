@@ -1,4 +1,4 @@
-from worlds.generic.Rules import add_rule, set_rule
+from worlds.generic.Rules import add_rule
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

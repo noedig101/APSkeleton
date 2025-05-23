@@ -3,15 +3,15 @@
 # Its helpful for grouping variables, making them easy to access, and consistent
 
 from enum import IntEnum
-from typing import Any, NamedTuple, Optional
+from typing import NamedTuple, Optional
 from BaseClasses import Location, Item, ItemClassification
 
 # These 2 make it so that the generic Location and Item types are more specific for your game
 class APSkeletonLocation(Location):
-    game = "Your game here!"
+    game = "APSkeleton"
 
 class APSkeletonItem(Item):
-    game = "Your game here!"
+    game = "APSkeleton"
 
 # I use these next 2 to convert the number you get from the options into a name
 # Mainly used in Items.py for starting chapter

@@ -84,7 +84,7 @@ event_locations = {
 # Its not here because this is an example and im not funny enough to think of more locations
 # But important to note
 location_table = {
-    **ap_skeleton_locations
-    **extra_locations
+    **ap_skeleton_locations,
+    **extra_locations,
     **event_locations
 }

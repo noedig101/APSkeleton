@@ -13,7 +13,7 @@ from BaseClasses import Item, ItemClassification
 
 # These come from the other files in this example. If you want to see the source ctrl + click the name
 # You can also do that ctrl + click for any functions to see what they do
-from .Types import ItemData, ChapterType, APSkeletonItem
+from .Types import ItemData, ChapterType, APSkeletonItem, chapter_type_to_name
 from .Locations import get_total_locations
 from typing import List, Dict, TYPE_CHECKING
 
@@ -34,13 +34,16 @@ def create_itempool(world: "APSkeletonWorld") -> List[Item]:
     # I can point to Sly Cooper and the Thievious Raccoonus since I did that
 
     # This is a good place to grab anything you need from options
-    starting_chapter = ChapterType(world.options.StartingChapter)
+    starting_chapter = chapter_type_to_name[ChapterType(world.options.StartingChapter)]
 
     # For this example I'll make it so there is a starting chapter
     # We loop through all the chapters in the my_chapter section
     for chapter in ap_skeleton_chapters.keys():
         # If the starting chapter equals the chapter we're looking at skip it
         # We skip it since we dont want to add the chapter the player started with to the item pool
+        print("-------------------------")
+        print(starting_chapter)
+        print("-------------------------")
         if starting_chapter == chapter:
             continue
         # Otherwise then we create an item with that name and add it to the item pool
@@ -65,7 +68,7 @@ def create_item(world: "APSkeletonWorld", name: str) -> Item:
 
 # Another generic function. For creating a bunch of items at once!
 def create_multiple_items(world: "APSkeletonWorld", name: str, count: int,
-                          item_type: ItemClassification = ItemClassification.progresssion) -> List[Item]:
+                          item_type: ItemClassification = ItemClassification.progression) -> List[Item]:
     data = item_table[name]
     itemlist: List[Item] = []
 

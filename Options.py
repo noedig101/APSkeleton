@@ -1,7 +1,7 @@
 from typing import List, Dict, Any
 from dataclasses import dataclass
 from worlds.AutoWorld import PerGameCommonOptions
-from Options import Choice, OptionGroup, Toggle, OptionSet, Range
+from Options import Choice, OptionGroup, Toggle, Range
 
 # If youve ever gone to an options page and seen how sometimes options are grouped
 # This is that
