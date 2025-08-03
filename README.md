@@ -28,7 +28,9 @@ If you have multiple drives like a C and D drive then you can go to that drive j
 
 `>cd workspace`
 
-If you capitalized workspace then it needs to be capitalized when you cd into it as well. You can also use the TAB key to autocomplete file names. So instead of typing the entire word workspace you could just type `wor` and then hit tab and it will fix it for you. If you had more folder or file names that have that same `wor` starting condition then just keep hitting tab until you find it.
+~~If you capitalized workspace then it needs to be capitalized when you cd into it as well~~ Thats not true lol! Just type in the name you want. You can also use the TAB key to autocomplete file names. So instead of typing the entire word workspace you could just type `wor` and then hit tab and it will fix it for you. If you had more folder or file names that have that same `wor` starting condition then just keep hitting tab until you find it. Another important thing to mention is if you want to go backwards a folder. To do that you do `cd` followed by 2 periods.
+
+`>cd ..`
 
 A lot of people have workspace folders. Its nice to just hold all youre projects in one location. And Im sure youll definitely fall in love with programming from this and go on to become the best dev ever right?
 
@@ -57,6 +59,8 @@ Below Ill list a bunch of git commands and Ill have a description of what its do
 `git branch` - Lists all the branches you have locally on your computer. Nice if you want to switch to a branch and youve forgotten the name/dont wanna type it and just wanna copy it.
 
 `git merge name-of-other-branch` - This ones more complicated (its why I gave it extra space). Its main use is for bringing in changes from another branch into yours. For example, lets say you branched off your main branch and called it my-first-branch. After working on a few things you decide to leave it alone for a while and work on something else. You branch off of main again and this time call it my-second-branch. You are able to finish up your second branch and you successfully merge (merging will be extra explained just below so dont worry if you dont get it yet) it into main. When you go back to working on my-first-branch then youll want to run git merge main so that all those changes that you finished in your second branch get moved over to this branch as well.
+
+As discussed this is just the functional basics. You could make an apworld and get it up on github with just these commands and maybe not even all of them. However theres sooooooooo much more to learn with git. phaneros in the AP discord has a wonderful [intro to git]((https://github.com/MatthewMarinets/ap_sc2_notes/blob/main/git.md)) that gets more in the weeds. Also if you're somehow here without going through the discord (???) then you can find the thread [here](https://discord.com/channels/731205301247803413/1400827971123675247) to ask for help.
 
 # Other GitHub stuff
 
