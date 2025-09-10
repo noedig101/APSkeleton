@@ -12,56 +12,48 @@ def create_option_groups() -> List[OptionGroup]:
 
     return option_group_list
 
-class StartingChapter(Choice):
+class IncludeKeys(Toggle):
     """
-    Determines which chapter you'll start with.
-    When you grab choice you'll get the associated number.
-    IE: If the player chooses the sewer then when you go to call StartingChapter you'll get 3
-    When displaying the options names on the site, _ will become spaces and the word option will go away.
+    Determines whether keys will be added to the item pool.
     """
-    display_name = "Starting Chapter"
-    option_green_hill_zone = 1
-    option_romania = 2
-    option_the_sewer = 3
-    default = 1
+    display_name = "Include Keys"
 
-class ExtraLocations(Toggle):
+class IncludeOwls(Toggle):
     """
-    This will enable the extra locations option. Toggle is just true or false.
+    Determines whether owls will be added to the item pool.
     """
-    display_name = "Add Extra Locations"
+    display_name = "Include Owls"
 
-class TrapChance(Range):
+class IncludeMaps(Toggle):
     """
-    Determines the chance for any junk item to become a trap.
-    Set it to 0 for no traps.
-    Range is in fact a range. You can set the limits and its default.
+    Determines whether maps will be added to the item pool.
     """
-    display_name = "Trap Chance"
-    range_start = 0
-    range_end = 100
-    default = 0
+    display_name = "Include Maps"
 
-class ForcefemTrapWeight(Range):
+#in TODO it says "3D vision", I'm going to assume that means first person camera
+#TODO: when it's disabled should it default in inventory on start or to first game completion? I might make it an option later.
+class IncludeFirstPerson(Toggle):
     """
-    The weight of forcefem traps in the trap pool.
-    Does really cool stuff to your body.
+    Determines whether the first person camera will be added to the item pool.
     """
-    display_name = "Forcefem Trap Weight"
-    range_start = 0
-    range_end = 100
-    default = 100
+    display_name = "Include First Person"
 
-class SpeedChangeTrapWeight(Range):
+class TrapAmount(Range):
     """
-    The weight of speed change traps in the trap pool.
-    Speed change traps change the game speed for x seconds.
+    How much junk to replace with rotation traps, percentage-wise.
     """
     display_name = "Speed Change Trap Weight"
     range_start = 0
     range_end = 100
-    default = 25
+    default = 20 #this is an estimate
 
+class Deathlink(Toggle):
+    """
+    Enables Deathlink.
+    """
+    display_name = "Deathlink"
+
+#I'm using the Apworld skeleton, and currently I have no idea what this does
 @dataclass
 class APSkeletonOptions(PerGameCommonOptions):
     StartingChapter:            StartingChapter
@@ -73,6 +65,6 @@ class APSkeletonOptions(PerGameCommonOptions):
 # This is where you organize your options
 # Its entirely up to you how you want to organize it
 ap_skeleton_option_groups: Dict[str, List[Any]] = {
-    "General Options": [StartingChapter, ExtraLocations],
-    "Trap Options": [TrapChance, ForcefemTrapWeight, SpeedChangeTrapWeight]
+    "Check Options": [IncludeKeys, IncludeOwls, IncludeMaps, IncludeFirstPerson],
+    "Other Options": [TrapAmount, Deathlink]
 }
