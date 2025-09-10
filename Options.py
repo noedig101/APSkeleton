@@ -12,6 +12,15 @@ def create_option_groups() -> List[OptionGroup]:
 
     return option_group_list
 
+class Goal(Choice):
+    """
+    Determines how many cubes total you need to goal.
+    """
+    display_name = "Goal"
+    option_32_cubes = 1
+    option_64_cubes = 2
+    default = 1
+
 class IncludeKeys(Toggle):
     """
     Determines whether keys will be added to the item pool.
