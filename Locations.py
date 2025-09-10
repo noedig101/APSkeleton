@@ -59,15 +59,26 @@ ap_skeleton_locations = {
     # Regions will be explained more in Regions.py
     # But just know that it's mostly about organization
     # Place locations together based on where they are in the game and what is needed to get there
-    "A Fake Location Name": LocData(20050100, "Bucharest"),
-    "A really good restaurant": LocData(20050101, "Brașov"),
-    "Nuketown": LocData(20050103, "Green Hill Zone - Act 1"),
-    "Nuketown 2": LocData(20050104, "Green Hill Zone - Act 1"),
-    "Talk to Sonic": LocData(20050105, "Green Hill Zone - Act 2"),
-    "Talk to Captain Price": LocData(20050106, "Green Hill Zone - Act 3"),
-    "TMNT Hangout Spot": LocData(20050107, "The Sewer"),
-    "Above TMNT Hangout Spot": LocData(20050108, "The Sewer"),
-    "Coughing Baby Pickup": LocData(20050109, "The Sewer"),    
+
+
+    # Comments are only used to say where the cubes are in order to help with logic, not to assign items to cubes
+
+    #0 Cubes (Villageville)
+    "Cube 1": LocData(20050100, "Villageville"),
+    "Cube 2": LocData(20050101, "Villageville"), #bits
+    "Anti-Cube 1": LocData(20050102, "Villageville"), #Mayor McMayor's house
+    "Anti-Cube 2": LocData(20050103, "Villageville"), #Boiler room; Requires 1 key and First person
+    "Villageville - Island Chest": LocData(20050104, "Villageville"),
+    "Villageville - Mayor McMayor Fireplace Chest": LocData(20050105, "Villageville"),
+    "Villageville - Boiler Room Map": LocData(20050106, "Villageville"), #Boiler Room; Requires 1 key
+
+    #2 Cubes (Natural Region) 4
+
+    # 1 Anti-Cube
+    # left off at: Nature Hub -> Bell Tower
+    
+    
+    
 }
 
 extra_locations = {
