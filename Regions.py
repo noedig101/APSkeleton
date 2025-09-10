@@ -17,26 +17,16 @@ def create_regions(world: "APSkeletonWorld"):
 
     # You can technically name your connections whatever you want as well
     # You'll use those connection names in Rules.py
-    menu = create_region(world, "Menu")
-    greenhillzone = create_region_and_connect(world, "Green Hill Zone", "Menu -> Green Hill Zone", menu)
-    romania = create_region_and_connect(world, "Romania", "Menu -> Romania", menu)
-    sewer = create_region_and_connect(world, "The Sewer", "Menu -> The Sewer", menu)
-
-    # ---------------------------------- Green Hill Zone ----------------------------------
-    greenhillzone1 = create_region_and_connect(world, "Green Hill Zone - Act 1", "Green Hill Zone -> Green Hill Zone - Act 1", greenhillzone)
-    greenhillzone2 = create_region_and_connect(world, "Green Hill Zone - Act 2", "Green Hill Zone - Act 1 -> Green Hill Zone - Act 2", greenhillzone1)
-    create_region_and_connect(world, "Green Hill Zone - Act 3", "Green Hill Zone - Act 2 -> Green Hill Zone - Act 3", greenhillzone2)
-
-    # ---------------------------------- Romania ------------------------------------------
-    bucharest = create_region_and_connect(world, "Bucharest", "Romania -> Bucharest", romania)
-    sibiu = create_region_and_connect(world, "Sibiu", "Romania -> Sibiu", romania)
-    brașov = create_region_and_connect(world, "Brașov", "Romania -> Brașov", romania)
-    bucharest.connect(sibiu, "Bucharest -> Sibiu")
-    sibiu.connect(brașov, "Sibiu -> Brașov")
-    brașov.connect(bucharest, "Brașov, Bucharest")
-
-    # ---------------------------------- The Sewer ----------------------------------------
-    create_region_and_connect(world, "Big Hole in the Floor", "The Sewer -> Big Hole in the Floor", sewer)
+    city = create_region(world, "Villageville")
+    core = create_region_and_connect(world, "Core", "Villageville -> Core", city)
+    create_region_and_connect(world, "Wall Village", "Core -> Wall Village", core)
+    create_region_and_connect(world, "Nu Zu", "Core -> Nu Zu", core)
+    create_region_and_connect(world, "Zu City", "Core -> Zu City", core)
+    natural = create_region_and_connect(world, "Natural Region", "City -> Natural Region", core)
+    industrial = create_region_and_connect(world, "Industrial District", "Natural Region -> Industrial District", natural)
+    create_region_and_connect(world, "Sewers", "Industrial District -> Sewers", industrial)
+    create_region_and_connect(world, "Cemetery", "Natural Region -> Cemetery", natural)
+    create_region_and_connect(world, "Scientific Region", "Natural Region -> Scientififc Region", natural)
 
 def create_region(world: "APSkeletonWorld", name: str) -> Region:
     reg = Region(name, world.player, world.multiworld)
