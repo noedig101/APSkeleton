@@ -13,7 +13,7 @@ from BaseClasses import Item, ItemClassification
 
 # These come from the other files in this example. If you want to see the source ctrl + click the name
 # You can also do that ctrl + click for any functions to see what they do
-from .Types import ItemData, ChapterType, APSkeletonItem, chapter_type_to_name
+from .Types import ItemData, APSkeletonItem
 from .Locations import get_total_locations
 from typing import List, Dict, TYPE_CHECKING
 
@@ -34,26 +34,46 @@ def create_itempool(world: "APSkeletonWorld") -> List[Item]:
     # I can point to Sly Cooper and the Thievious Raccoonus since I did that
 
     # This is a good place to grab anything you need from options
-    starting_chapter = chapter_type_to_name[ChapterType(world.options.StartingChapter)]
+    include_keys = world.options.IncludeKeys
+    include_owls = world.options.IncludeOwls
+    include_maps = world.options.IncludeMaps
+    inclide_3d = world.options.IncludeFirstPerson
+    goal = world.options.Goal
 
-    # For this example I'll make it so there is a starting chapter
-    # We loop through all the chapters in the my_chapter section
-    for chapter in ap_skeleton_chapters.keys():
-        # If the starting chapter equals the chapter we're looking at skip it
-        # We skip it since we dont want to add the chapter the player started with to the item pool
-        print("-------------------------")
-        print(starting_chapter)
-        print("-------------------------")
-        if starting_chapter == chapter:
-            continue
-        # Otherwise then we create an item with that name and add it to the item pool
-        else:
-            itempool.append(create_item(world, chapter))
+
+    itempool.append(create_multiple_items(world, "Cube", 32))
+    itempool.append(create_multiple_items(world, "Anti-Cube", 32))
+
+    if include_keys:
+        # according to Google there are 8 keys. please correct me if I'm wrong
+        itempool.append(create_multiple_items(world, "Key", 8))
+    
+    if include_owls:
+        # if you need the owl items distinct, tell me and I'll do it
+        itempool.append(create_multiple_items(world, "Owl", 4))
+
+    if include_maps:
+        create_item(world, "Treasure Map - Red")
+        create_item(world, "Treasure Map - Purple")
+        create_item(world, "Treasure Map - Tower")
+        create_item(world, "Treasure Map - QR Code")
+        # I'm putting Burnt Map as junk since red cubes aren't included
+        create_item(world, "Treasure Map - Burnt")
+        create_item(world, "Treasure Map - Cemetery 1")
+        create_item(world, "Treasure Map - Cemetery 2")
+        create_item(world, "Treasure Map - Cemetery 3")
+        create_item(world, "Treasure Map - Cemetery 4")
+
+    if include_3d:
+        create_item(world, "First Person Camera")
+
+
+
     
     # It's up to you and how you want things organized but I like to deal with victory here
     # This creates your win item and then places it at the "location" where you win
     victory = create_item(world, "Victory")
-    world.multiworld.get_location("Beat Final Boss", world.player).place_locked_item(victory)
+    world.multiworld.get_location("32 Total Cubes" if goal == 1 else "64 Total Cubes", world.player).place_locked_item(victory)
 
     # Then junk items are made
     # Check out the create_junk_items function for more details
@@ -79,7 +99,7 @@ def create_multiple_items(world: "APSkeletonWorld", name: str, count: int,
 
 # Finally, where junk items are created
 def create_junk_items(world: "APSkeletonWorld", count: int) -> List[Item]:
-    trap_chance = world.options.TrapChance.value
+    trap_chance = world.options.TrapAmount.value
     junk_pool: List[Item] = []
     junk_list: Dict[str, int] = {}
     trap_list: Dict[str, int] = {}
@@ -117,25 +137,28 @@ def create_junk_items(world: "APSkeletonWorld", count: int) -> List[Item]:
 # I've seen some games that dynamically add item codes such as DOOM as well
 ap_skeleton_items = {
     # Progression items
-    "A cute rat": ItemData(20050001, ItemClassification.progression),
-    "Estrogen": ItemData(20050002, ItemClassification.progression),
-    "Testosterone": ItemData(20050003, ItemClassification.progression),
+    "Cube": ItemData(20050001, ItemClassification.progression),
+    "Anti-Cube": ItemData(20050002, ItemClassification.progression),
+    "Key": ItemData(20050003, ItemClassification.progression),
+    "Owl": ItemData(20050004, ItemClassification.progression),
+    "Treasure Map - Red": ItemData(20050005, ItemClassification.progression),
+    "Treasure Map - Purple": ItemData(20050006, ItemClassification.progression),
+    "Treasure Map - Tower": ItemData(20050007, ItemClassification.progression),
+    "Treasure Map - QR Code": ItemData(20050008, ItemClassification.progression),
+    "Treasure Map - Cemetery 1": ItemData(20050009, ItemClassification.progression),
+    "Treasure Map - Cemetery 2": ItemData(20050010, ItemClassification.progression),
+    "Treasure Map - Cemetery 3": ItemData(20050011, ItemClassification.progression),
+    "Treasure Map - Cemetery 4": ItemData(20050012, ItemClassification.progression),
+    "First Person Camera": ItemData(20050013, ItemClassification.progression),
 
     # Useful items
-    "A good friend": ItemData(20050004, ItemClassification.useful),
-    "500 cigarettes": ItemData(20050005, ItemClassification.useful),
-    "Crime Baby": ItemData(20050006, ItemClassification.useful),
+    # ¯\_(ツ)_/¯
+
+    # Unique Junk
+    "Treasure Map - Burnt": ItemData(20050014, ItemClassification.filler),
 
     # Victory is added here since in this organization it needs to be in the default item pool
-    "Victory": ItemData(20050007, ItemClassification.progression)
-}
-
-# I like to split up the items so that its easier to look at and since sometimes you only need to look at one specific type of list
-# An example of that is in create_itempool where I simulated having a starting chapter
-ap_skeleton_chapters = {
-    "Green Hill Zone": ItemData(20050008, ItemClassification.progression),
-    "Romania": ItemData(20050009, ItemClassification.progression),
-    "The Sewer": ItemData(20050010, ItemClassification.progression)
+    "Victory": ItemData(20050015, ItemClassification.progression)
 }
 
 # In the way that I made items, I added a way to specify how many of an item should exist
@@ -143,25 +166,21 @@ ap_skeleton_chapters = {
 # There is a better way of doing this but this is my jank
 junk_items = {
     # Junk
-    "An Old Gamecube": ItemData(20050011, ItemClassification.filler, 0),
-    "Coughing Baby": ItemData(20050012, ItemClassification.filler, 0),
+    "Filler": ItemData(20050016, ItemClassification.filler, 0),
 
     # Traps
-    "Forcefem Trap": ItemData(20050013, ItemClassification.trap, 0),
-    "Speed Change Trap": ItemData(20050014, ItemClassification, 0)
+    "Rotation Trap": ItemData(20050017, ItemClassification.trap, 0)
 }
 
 # Junk weights is just how often an item will be chosen when junk is being made
 # Bigger item = more likely to show up
 junk_weights = {
-    "An Old Gamecube": 40,
-    "Coughing Baby": 20
+    "Filler": 50,
 }
 
 # This makes a really convenient list of all the other dictionaries
 # (fun fact: {} is a dictionary)
 item_table = {
     **ap_skeleton_items,
-    **ap_skeleton_chapters,
     **junk_items
 }
